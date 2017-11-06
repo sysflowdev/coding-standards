@@ -1,3 +1,7 @@
+---
+layout: scaffold
+title: PHP
+---
 # PHP
 
 - [Introduction](#introduction)
