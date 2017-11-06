@@ -1,3 +1,6 @@
+---
+title: Home
+---
 # Netmatters Coding Standard & Style Guide
 
 - [HTML](/html.md)

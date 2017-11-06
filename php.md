@@ -1,5 +1,4 @@
 ---
-layout: scaffold
 title: PHP
 ---
 # PHP
@@ -10,6 +9,8 @@ title: PHP
 - [Namespacing](#namespacing)
 - [Functions](#functions)
 - [Variables](#variables)
+- [Arrays](#arrays)
+- [Docblocks](#docblocks)
 - [PHPMD](#phpmd)
 - [Resources](#resources)
 
@@ -88,6 +89,32 @@ Functions should be written in camelCase. With the exception of global helper fu
 ```php
 $invoice->vat_total = $vatTotal;
 $vatTotal = $invoice->vat_total;
+```
+
+<a name="arrays"></a>
+## Arrays
+- Array keys should be snake case.
+- Arrays should be written in the new format using square brackets [].
+
+```php
+$array = [
+    'some_array_key' => 'some_value'
+];
+```
+
+## Docblocks
+Docblocks should state the return type and paremeters, as this can help the IDE flag up when you are trying to use the wrong return type or parameter.
+
+Also usage of PHP return types where appropriate (e.g. when they serve a benefit, if you require an integer then force it to be one).
+
+```php
+/**
+ * Description (optional?)
+ *  
+ * @param $name
+ *
+ * @return string
+ */
 ```
 
 <a name="phpmd"></a>

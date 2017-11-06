@@ -1,4 +1,7 @@
-#JavaScript
+---
+title: JavaScript
+---
+# JavaScript
 
 - [Introduction (@todo)](#introduction)
 - [jQuery](#jquery)

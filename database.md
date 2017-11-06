@@ -1,4 +1,7 @@
-#Database
+---
+title: Database
+---
+# Database
 
 - [Tables and Fields](#tables)
 - [Migrations](#migrations)
@@ -26,7 +29,11 @@ Be aware of mathematical calculations in code, if possible this should be saved 
 
 Be descriptive with column names (e.g. num_hours should be hours not minutes)
 
-Foreign keys should always following the convention of *{table name}*_id
+Foreign keys should be descriptive and using the table name where possible. But there are some scenarios where this will not work, especially when there are 2 user IDs (e.g. creator_id & updater_id).
+```
+user_id // table_name only isn't necessarily descriptive enough
+creator_id // because it is the creator of the table
+```
 
 If there is business logic on the “type” of field, default to an enum. *e.g. Order status*
 

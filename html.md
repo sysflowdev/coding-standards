@@ -1,4 +1,7 @@
-#HTML
+---
+title: HTML
+---
+# HTML
 
 - [Introduction](#introduction)
 - [Be Smart and Future Proof](#be-smart)
@@ -27,7 +30,7 @@
         - [Technical Differences](#technical-differences)
 
 <a name="introduction"></a>
-##Introduction
+## Introduction
 Most of our websites define themselves as HTML5 (via their doctypes), therefore our standards are aimed at HTML5 whilst being backwards compatibility and future-proof as HTML5 allows you to be lazy.
 
 <a name="be-smart"></a>
@@ -157,7 +160,7 @@ This will not work, because the value contains spaces:
 ```
 
 <a name="image-attributes"></a>
-###Image Attributes
+### Image Attributes
 Always add the "alt" attribute to images. This attribute is important when the image for some reason cannot be displayed. Also, always define image width and height. It reduces flickering because the browser can reserve space for the image before loading.
 
 **Bad:**
@@ -170,7 +173,7 @@ Always add the "alt" attribute to images. This attribute is important when the i
 ```
 
 <a name="spaces-equal-signs"></a>
-###Spaces and Equal Signs
+### Spaces and Equal Signs
 HTML5 allows spaces around equal signs. But space-less is easier to read, and groups entities better together.
 
 **Bad:**
@@ -183,13 +186,13 @@ HTML5 allows spaces around equal signs. But space-less is easier to read, and gr
 ```
 
 <a name="avoid-long-code-lines"></a>
-###Avoid Long Code Lines
+### Avoid Long Code Lines
 When using an HTML editor, it is inconvenient to scroll right and left to read the HTML code.
 
 Try to avoid code lines longer than 240 characters.
 
 <a name="blank-lines-and-indentation"></a>
-###Blank Lines and Indentation
+### Blank Lines and Indentation
 Do not add blank lines without a reason.
 
 For readability, add blank lines to separate large or logical code blocks.
@@ -258,7 +261,7 @@ and the home of the Japanese Imperial Family.</p>
 ```
 
 <a name="omitting-html-body-tags"></a>
-###Do Not Omit `<html>` and `<body>`?
+### Do Not Omit `<html>` and `<body>`?
 > {note} Just because you can doesn't mean you should!
 
 <a name="omitting-head"></a>
@@ -266,7 +269,7 @@ and the home of the Japanese Imperial Family.</p>
 > {note} Just because you can doesn't mean you should!
 
 <a name="meta-data"></a>
-###Meta Data
+### Meta Data
 The `<title>` element is required in HTML5. Make the title as meaningful as possible:
 
 ```
@@ -283,7 +286,7 @@ To ensure proper interpretation, and correct search engine indexing, both the la
 ```
 
 <a name="set-viewport"></a>
-###Setting The Viewport
+### Setting The Viewport
 HTML5 introduced a method to let web designers take control over the viewport, through the <meta> tag.
 
 The viewport is the user's visible area of a web page. It varies with the device, and will be smaller on a mobile phone than on a computer screen.
@@ -302,7 +305,7 @@ The initial-scale=1.0 part sets the initial zoom level when the page is first lo
 Here is an example of a web page without the viewport meta tag, and the same web page with the viewport meta tag:
 
 <a name="html-comments"></a>
-###HTML Comments
+### HTML Comments
 Short comments should be written on one line, like this:
 
 ```
@@ -318,7 +321,7 @@ Comments that spans more than one line, should be written like this:
 Long comments are easier to observe if they are indented four spaces.
 
 <a name="style-sheets"></a>
-###Style Sheets
+### Style Sheets
 Use simple syntax for linking to style sheets (the type attribute is not necessary):
 
 ```
@@ -347,7 +350,7 @@ body {
 - Avoid lines over 80 characters
 
 <a name="load-javascript-in-html"></a>
-###Loading JavaScript in HTML
+### Loading JavaScript in HTML
 Use simple syntax for loading external scripts (the type attribute is not necessary):
 ```
 <script src="myscript.js">
@@ -359,7 +362,7 @@ Also use schema-less links when linking when providing absolute paths.
 ```
 
 <a name="access-html-elements-in-javascript"></a>
-###Accessing HTML Elements with JavaScript
+### Accessing HTML Elements with JavaScript
 A consequence of using "untidy" HTML styles, might result in JavaScript errors.
 
 These two JavaScript statements will produce different results:
@@ -374,7 +377,7 @@ var obj = getElementById("demo")
 ```
 
 <a name="use-lower-case-file-names"></a>
-###Use Lower Case File Names
+### Use Lower Case File Names
 Some web servers (Apache, Unix) are case sensitive about file names: "london.jpg" cannot be accessed as "London.jpg".
 
 Other web servers (Microsoft, IIS) are not case sensitive: "london.jpg" can be accessed as "London.jpg" or "london.jpg".
@@ -386,7 +389,7 @@ If you move from a case insensitive to a case sensitive server, even small error
 To avoid these problems, always use lower case file names.
 
 <a name="file-extensions"></a>
-###File Extensions
+### File Extensions
 HTML files should have a **.html** or **.htm** extension.
 
 CSS files should have a **.css** extension.
@@ -394,7 +397,7 @@ CSS files should have a **.css** extension.
 JavaScript files should have a **.js** extension.
 
 <a name="differences-html-htm"></a>
-####Differences Between .htm and .html
+#### Differences Between .htm and .html
 There is no difference between the .htm and .html extensions. Both will be treated as HTML by any web browser or web server.
 
 The differences are cultural:
@@ -404,7 +407,7 @@ The differences are cultural:
 .html "smells" of Unix operating systems that did not have this limitation.
 
 <a name="technical-differences"></a>
-####Technical Differences
+#### Technical Differences
 When a URL does not specify a filename (like https://www.w3schools.com/css/), the server returns a default filename. Common default filenames are index.html, index.htm, default.html, and default.htm.
 
 If your server is configured only with "index.html" as default filename, your file must be named "index.html", not "index.htm."

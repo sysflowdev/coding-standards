@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Database | coding-standards</title>
+<meta property="og:title" content="Database" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Netmatters Coding Standards" />
+<meta property="og:description" content="Netmatters Coding Standards" />
+<link rel="canonical" href="http://localhost:4000/database.html" />
+<meta property="og:url" content="http://localhost:4000/database.html" />
+<meta property="og:site_name" content="coding-standards" />
+<script type="application/ld+json">
+{"name":null,"description":"Netmatters Coding Standards","author":null,"@type":"WebPage","url":"http://localhost:4000/database.html","publisher":null,"image":null,"headline":"Database","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=16f4dcafafc12a26141f8c7e484470a05c329937">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <a href="http://github.com/pages/sysflowdev/coding-standards"> <h1>coding-standards</h1> </a>
+        <p>Netmatters Coding Standards</p>
+
+        
+        <p class="view"><a href="http://github.com/sysflowdev/coding-standards">View the Project on GitHub <small></small></a></p>
+        
+
+        
+
+        <nav class="nav-primary" role="navigation" >
+    <ul>
+        <li><a href="/html.html">HTML</a></li>
+        <li><a href="/css.html">CSS</a></li>
+        <li><a href="/sass.html">SASS</a></li>
+        <li><a href="/javascript.html">JavaScript</a></li>
+        <li><a href="/php.html">PHP</a></li>
+        <li><a href="/database.html">Database</a></li>
+        <li><a href="/filenames.html">Filenames</a></li>
+        <li><a href="/git.html">Git</a></li>
+        <li><a href="/browser-testing.html">Browser Testing</a></li>
+    </ul>
+</nav>
+
+        
+    </header>
+    <section>
+
+        <h1 id="database">Database</h1>
+
+<ul>
+  <li><a href="#tables">Tables and Fields</a></li>
+  <li><a href="#migrations">Migrations</a></li>
+</ul>
+
+<p><a name="tables"></a></p>
+<h2 id="tables-and-fields">Tables and Fields</h2>
+<p>All table and fields to use snake_case.</p>
+
+<p>Currency should be stored in an integer e.g. pence.</p>
+
+<p>Columns should be structured in the following method</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- ID
+- Foreign Keys
+- Fields
+- Nullable Datetime fields
+</code></pre></div></div>
+
+<p>Fields should always be nullable, if the field can contain a NULL.</p>
+
+<p>All foreign keys should contain an index, with the exception of a pivot table.</p>
+
+<p>Be aware of mathematical calculations in code, if possible this should be saved in the database. This stops the calculation needing to be recalculated and gives a history if the calculation changes.</p>
+
+<p>Be descriptive with column names (e.g. num_hours should be hours not minutes)</p>
+
+<p>Foreign keys should be descriptive and using the table name where possible. But there are some scenarios where this will not work, especially when there are 2 user IDs (e.g. creator_id &amp; updater_id).</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>user_id // table_name only isn't necessarily descriptive enough
+creator_id // because it is the creator of the table
+</code></pre></div></div>
+
+<p>If there is business logic on the “type” of field, default to an enum. <em>e.g. Order status</em></p>
+
+<p><a name="migrations"></a></p>
+<h2 id="migrations">Migrations</h2>
+<p>All database changes should be in migrations.</p>
+
+<p>Do not use if statements in migrations, this is so that we see errors when a migration fails in case something has gone wrong.
+e.g. don’t check that table exists before creating, or that column exists. If they do and migration fails it should be corrected, not ignored.</p>
+
+
+    </section>
+    <footer>
+        
+        <p>This project is maintained by <a href="http://github.com/sysflowdev">sysflowdev</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+    </footer>
+</div>
+<script src="/assets/js/scale.fix.js"></script>
+
+
+
+</body>
+</html>

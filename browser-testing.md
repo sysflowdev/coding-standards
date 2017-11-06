@@ -1,3 +1,6 @@
+---
+title: Browser Testing
+---
 # Browser Testing
 
 - [Resources](#resources)

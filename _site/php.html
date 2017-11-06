@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>PHP | coding-standards</title>
+<meta property="og:title" content="PHP" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Netmatters Coding Standards" />
+<meta property="og:description" content="Netmatters Coding Standards" />
+<link rel="canonical" href="http://localhost:4000/php.html" />
+<meta property="og:url" content="http://localhost:4000/php.html" />
+<meta property="og:site_name" content="coding-standards" />
+<script type="application/ld+json">
+{"name":null,"description":"Netmatters Coding Standards","author":null,"@type":"WebPage","url":"http://localhost:4000/php.html","publisher":null,"image":null,"headline":"PHP","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=16f4dcafafc12a26141f8c7e484470a05c329937">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <a href="http://github.com/pages/sysflowdev/coding-standards"> <h1>coding-standards</h1> </a>
+        <p>Netmatters Coding Standards</p>
+
+        
+        <p class="view"><a href="http://github.com/sysflowdev/coding-standards">View the Project on GitHub <small></small></a></p>
+        
+
+        
+
+        <nav class="nav-primary" role="navigation" >
+    <ul>
+        <li><a href="/html.html">HTML</a></li>
+        <li><a href="/css.html">CSS</a></li>
+        <li><a href="/sass.html">SASS</a></li>
+        <li><a href="/javascript.html">JavaScript</a></li>
+        <li><a href="/php.html">PHP</a></li>
+        <li><a href="/database.html">Database</a></li>
+        <li><a href="/filenames.html">Filenames</a></li>
+        <li><a href="/git.html">Git</a></li>
+        <li><a href="/browser-testing.html">Browser Testing</a></li>
+    </ul>
+</nav>
+
+        
+    </header>
+    <section>
+
+        <h1 id="php">PHP</h1>
+
+<ul>
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#classes">Classes</a></li>
+  <li><a href="#controllers">Controllers</a></li>
+  <li><a href="#namespacing">Namespacing</a></li>
+  <li><a href="#functions">Functions</a></li>
+  <li><a href="#variables">Variables</a></li>
+  <li><a href="#arrays">Arrays</a></li>
+  <li><a href="#docblocks">Docblocks</a></li>
+  <li><a href="#phpmd">PHPMD</a></li>
+  <li><a href="#resources">Resources</a></li>
+</ul>
+
+<p><a name="introduction"></a></p>
+<h2 id="introduction">Introduction</h2>
+<p>Here is some helpful information in addition to the PSR2 standards on how we should be using PHP.</p>
+
+<p><a name="classes"></a></p>
+<h2 id="classes">Classes</h2>
+
+<p>File names and class names should be Studly case.</p>
+
+<p>Examples of names:</p>
+<dl class="dl-horizontal">
+    <dt>Model</dt>
+    <dd>Task</dd>    
+    <dt>Controller</dt>
+    <dd>TaskController</dd>   
+    <dt>Composer</dt>
+    <dd>TaskComposer</dd>    
+    <dt>Factory</dt>
+    <dd>TaskFactory</dd>
+</dl>
+
+<p><a name="controllers"></a></p>
+<h2 id="controllers">Controllers</h2>
+<p>Each controller should ideally only contain the following public methods. These are all optional methods.</p>
+
+<ul>
+  <li>Index</li>
+  <li>Create</li>
+  <li>Store</li>
+  <li>Edit</li>
+  <li>Update</li>
+  <li>Destroy</li>
+</ul>
+
+<p>If you are to add other methods, here is an example of when not to add to the existing controller.</p>
+<ul>
+  <li>getNotes()</li>
+  <li>storeNotes()</li>
+</ul>
+
+<p>These should ideally be in their own controller as:</p>
+<ul>
+  <li>index</li>
+  <li>store</li>
+</ul>
+
+<p><a name="namespacing"></a></p>
+<h2 id="namespacing">Namespacing</h2>
+
+<p>Modularizing your code into pseudo packages.</p>
+
+<p><strong>Examples (Holiday)</strong></p>
+<ul>
+  <li>Sysflow/Holiday/Commands</li>
+  <li>Sysflow/Holiday/Http/Admin/Controllers</li>
+  <li>Sysflow/Holiday/Http/Frontend/Controllers</li>
+  <li>Sysflow/Holiday/Models</li>
+  <li>resources/views/holiday</li>
+</ul>
+
+<p><strong>Examples (Task)</strong></p>
+<ul>
+  <li>Sysflow/Task/Commands</li>
+  <li>Sysflow/Task/Http/Admin/Controllers</li>
+  <li>Sysflow/Task/Http/Frontend/Controllers</li>
+  <li>Sysflow/Task/Models</li>
+  <li>resources/views/task</li>
+</ul>
+
+<p><a name="functions"></a></p>
+<h2 id="functions">Functions</h2>
+<p>Should always be descriptive e.g.</p>
+<ul>
+  <li>isExportable()</li>
+  <li>export()</li>
+</ul>
+
+<p>Functions should be written in camelCase. With the exception of global helper functions and tests.</p>
+
+<p><a name="variables"></a></p>
+<h2 id="variables">Variables</h2>
+<div class="alert alert-warning">And the winner is camelCase</div>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$invoice</span><span class="o">-&gt;</span><span class="na">vat_total</span> <span class="o">=</span> <span class="nv">$vatTotal</span><span class="p">;</span>
+<span class="nv">$vatTotal</span> <span class="o">=</span> <span class="nv">$invoice</span><span class="o">-&gt;</span><span class="na">vat_total</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><a name="arrays"></a></p>
+<h2 id="arrays">Arrays</h2>
+<ul>
+  <li>Array keys should be snake case.</li>
+  <li>Arrays should be written in the new format using square brackets [].</li>
+</ul>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$array</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'some_array_key'</span> <span class="o">=&gt;</span> <span class="s1">'some_value'</span>
+<span class="p">];</span>
+</code></pre></div></div>
+
+<h2 id="docblocks">Docblocks</h2>
+<p>Docblocks should state the return type and paremeters, as this can help the IDE flag up when you are trying to use the wrong return type or parameter.</p>
+
+<p>Also usage of PHP return types where appropriate (e.g. when they serve a benefit, if you require an integer then force it to be one).</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sd">/**
+ * Description (optional?)
+ *  
+ * @param $name
+ *
+ * @return string
+ */</span>
+</code></pre></div></div>
+
+<p><a name="phpmd"></a></p>
+<h2 id="phpmd---php-mess-detection">PHPMD - PHP Mess Detection</h2>
+<p>Also as much as possible try to following the best practices set out in <a href="https://phpmd.org/">PHPMD</a>.</p>
+
+<blockquote>
+  <p>{tip} Set up PHPStorm to alert you to problems in your code.</p>
+</blockquote>
+
+<p><a name="resources"></a></p>
+<h2 id="resources">Resources</h2>
+<ul>
+  <li><a href="http://www.phptherightway.com/">PHP : The Right Way</a></li>
+  <li><a href="http://www.php.net/">PHP.net</a></li>
+  <li><a href="https://laracasts.com/">Laracasts</a></li>
+  <li><a href="https://laravel.com/docs/4.2">Laravel Docs 4.2</a></li>
+  <li><a href="https://laravel.com/api/4.2">Laravel API 4.2</a></li>
+  <li><a href="https://laravel.com/docs/5.5">Laravel Docs 5.5</a></li>
+  <li><a href="https://laravel.com/api/5.5">Laravel API 5.5</a></li>
+  <li><a href="https://anampiu.github.io/blog/OOP-principles/">OOP Principles</a></li>
+  <li><a href="http://williamdurand.fr/2013/06/03/object-calisthenics/">Object Calisthenics</a></li>
+</ul>
+
+
+    </section>
+    <footer>
+        
+        <p>This project is maintained by <a href="http://github.com/sysflowdev">sysflowdev</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+    </footer>
+</div>
+<script src="/assets/js/scale.fix.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>HTML | coding-standards</title>
+<meta property="og:title" content="HTML" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Netmatters Coding Standards" />
+<meta property="og:description" content="Netmatters Coding Standards" />
+<link rel="canonical" href="http://localhost:4000/html.html" />
+<meta property="og:url" content="http://localhost:4000/html.html" />
+<meta property="og:site_name" content="coding-standards" />
+<script type="application/ld+json">
+{"name":null,"description":"Netmatters Coding Standards","author":null,"@type":"WebPage","url":"http://localhost:4000/html.html","publisher":null,"image":null,"headline":"HTML","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=16f4dcafafc12a26141f8c7e484470a05c329937">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <a href="http://github.com/pages/sysflowdev/coding-standards"> <h1>coding-standards</h1> </a>
+        <p>Netmatters Coding Standards</p>
+
+        
+        <p class="view"><a href="http://github.com/sysflowdev/coding-standards">View the Project on GitHub <small></small></a></p>
+        
+
+        
+
+        <nav class="nav-primary" role="navigation" >
+    <ul>
+        <li><a href="/html.html">HTML</a></li>
+        <li><a href="/css.html">CSS</a></li>
+        <li><a href="/sass.html">SASS</a></li>
+        <li><a href="/javascript.html">JavaScript</a></li>
+        <li><a href="/php.html">PHP</a></li>
+        <li><a href="/database.html">Database</a></li>
+        <li><a href="/filenames.html">Filenames</a></li>
+        <li><a href="/git.html">Git</a></li>
+        <li><a href="/browser-testing.html">Browser Testing</a></li>
+    </ul>
+</nav>
+
+        
+    </header>
+    <section>
+
+        <h1 id="html">HTML</h1>
+
+<ul>
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#be-smart">Be Smart and Future Proof</a></li>
+  <li><a href="#standards">Standards</a>
+    <ul>
+      <li><a href="#document-types">Use Correct Document Type</a></li>
+      <li><a href="#lower-case-element-names">Use Lower Case Element Names</a></li>
+      <li><a href="#close-html-elements">Close All HTML Elements</a></li>
+      <li><a href="#close-empty-html-elements">Close Empty HTML Elements</a></li>
+      <li><a href="#lower-case-attribute-names">Use Lower Case Attribute Names</a></li>
+      <li><a href="#quote-attribute-values">Quote Attribute Values</a></li>
+      <li><a href="#image-attributes">Image Attributes</a></li>
+      <li><a href="#spaces-equal-signs">Spaces and Equal Signs</a></li>
+      <li><a href="#avoid-long-code-lines">Avoid Long Code Lines</a></li>
+      <li><a href="#blank-lines-and-indentation">Blank Lines and Indentation</a></li>
+      <li><a href="#omitting-html-body-tags">Do Not Omit <code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code> and <code class="highlighter-rouge">&lt;body&gt;</code>?</a></li>
+      <li><a href="#omitting-head">Do Not Omit <code class="highlighter-rouge">&lt;head&gt;</code>?</a></li>
+      <li><a href="#meta-data">Meta Data</a></li>
+      <li><a href="#set-viewport">Setting The Viewport</a></li>
+      <li><a href="#html-comments">HTML Comments</a></li>
+      <li><a href="#style-sheets">Style Sheets</a></li>
+      <li><a href="#load-javascript-in-html">Loading JavaScript in HTML</a></li>
+      <li><a href="#access-html-elements-in-javascript">Accessing HTML Elements with JavaScript</a></li>
+      <li><a href="#use-lower-case-file-names">Use Lower Case File Names</a></li>
+      <li><a href="#file-extensions">File Extensions</a>
+        <ul>
+          <li><a href="#differences-html-htm">Differences Between .htm and .html</a></li>
+          <li><a href="#technical-differences">Technical Differences</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><a name="introduction"></a></p>
+<h2 id="introduction">Introduction</h2>
+<p>Most of our websites define themselves as HTML5 (via their doctypes), therefore our standards are aimed at HTML5 whilst being backwards compatibility and future-proof as HTML5 allows you to be lazy.</p>
+
+<p><a name="be-smart"></a></p>
+<h2 id="be-smart-and-future-proof">Be Smart and Future Proof</h2>
+<p>A consistent use of style, makes it easier for others to understand your HTML.</p>
+
+<p>In the future, programs like XML readers, may want to read your HTML.</p>
+
+<p>Using a well-formed “close to XHTML” syntax, is smart as it makes sites backwards compatible and future proof.</p>
+
+<blockquote>
+  <p>{tip} Always keep your code tidy, clean, and well-formed.</p>
+</blockquote>
+
+<p><a name="standards"></a></p>
+<h2 id="standards">Standards</h2>
+<p><a name="document-types"></a></p>
+<h3 id="use-correct-document-type">Use Correct Document Type</h3>
+<p>Always declare the document type as the first line in your document:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</code></pre></div></div>
+
+<p>If you want consistency with lower case tags, you can use:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!doctype html&gt;
+</code></pre></div></div>
+<p><a name="lower-case-element-names"></a></p>
+<h3 id="use-lower-case-element-names">Use Lower Case Element Names</h3>
+<p>HTML5 allows mixing uppercase and lowercase letters in element names.</p>
+
+<p>We recommend using lowercase element names because:</p>
+
+<ul>
+  <li>Mixing uppercase and lowercase names is bad</li>
+  <li>Developers normally use lowercase names (as in XHTML)</li>
+  <li>Lowercase look cleaner</li>
+  <li>Lowercase are easier to write</li>
+</ul>
+
+<p><strong>Bad:</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;SECTION&gt; 
+  &lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;/SECTION&gt;
+</code></pre></div></div>
+<p><strong>Very Bad:</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;Section&gt; 
+  &lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;/SECTION&gt;
+</code></pre></div></div>
+<p><strong>Good:</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;section&gt; 
+  &lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;/section&gt;
+</code></pre></div></div>
+
+<p><a name="close-html-elements"></a></p>
+<h3 id="close-all-html-elements">Close All HTML Elements</h3>
+<p>Always close all HTML elements.</p>
+
+<p><strong>Bad:</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;section&gt;
+  &lt;p&gt;This is a paragraph.
+  &lt;p&gt;This is a paragraph.
+&lt;/section&gt;
+</code></pre></div></div>
+<p><strong>Good:</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;section&gt;
+  &lt;p&gt;This is a paragraph.&lt;/p&gt;
+  &lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;/section&gt;
+</code></pre></div></div>
+
+<p><a name="close-empty-html-elements"></a></p>
+<h3 id="close-empty-html-elements">Close Empty HTML Elements</h3>
+<p>Always close empty HTML elements.</p>
+
+<p><strong>Allowed:</strong>
+<code class="highlighter-rouge">&lt;meta charset="utf-8"&gt;</code>
+<strong>Also Allowed:</strong>
+<code class="highlighter-rouge">&lt;meta charset="utf-8" /&gt;</code></p>
+
+<p><a name="lower-case-attribute-names"></a></p>
+<h3 id="use-lower-case-attribute-names">Use Lower Case Attribute Names</h3>
+<p>Always use lowercase attribute names because:</p>
+
+<ul>
+  <li>Mixing uppercase and lowercase names is bad</li>
+  <li>Developers normally use lowercase names (as in XHTML)</li>
+  <li>Lowercase look cleaner</li>
+  <li>Lowercase are easier to write</li>
+</ul>
+
+<p><strong>Bad:</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div CLASS="menu"&gt;
+</code></pre></div></div>
+<p><strong>Good:</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="menu"&gt;
+</code></pre></div></div>
+
+<p><a name="quote-attribute-values"></a></p>
+<h3 id="quote-attribute-values">Quote Attribute Values</h3>
+<p>HTML5 allows attribute values without quotes.</p>
+
+<p>We recommend quoting attribute values because:</p>
+
+<ul>
+  <li>Mixing uppercase and lowercase values is bad</li>
+  <li>Quoted values are easier to read</li>
+  <li>You MUST use quotes if the value contains spaces</li>
+</ul>
+
+<p><strong>Very bad:</strong>
+This will not work, because the value contains spaces:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;table class=table striped&gt;
+</code></pre></div></div>
+<p><strong>Bad:</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;table class=striped&gt;
+</code></pre></div></div>
+<p><strong>Good:</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;table class="striped"&gt;
+</code></pre></div></div>
+
+<p><a name="image-attributes"></a></p>
+<h3 id="image-attributes">Image Attributes</h3>
+<p>Always add the “alt” attribute to images. This attribute is important when the image for some reason cannot be displayed. Also, always define image width and height. It reduces flickering because the browser can reserve space for the image before loading.</p>
+
+<p><strong>Bad:</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;img src="html5.gif"&gt;
+</code></pre></div></div>
+<p><strong>Good:</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;img src="html5.gif" alt="HTML5" style="width:128px;height:128px"&gt;
+</code></pre></div></div>
+
+<p><a name="spaces-equal-signs"></a></p>
+<h3 id="spaces-and-equal-signs">Spaces and Equal Signs</h3>
+<p>HTML5 allows spaces around equal signs. But space-less is easier to read, and groups entities better together.</p>
+
+<p><strong>Bad:</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;link rel = "stylesheet" href = "styles.css"&gt;
+</code></pre></div></div>
+<p><strong>Good:</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;link rel="stylesheet" href="styles.css"&gt;
+</code></pre></div></div>
+
+<p><a name="avoid-long-code-lines"></a></p>
+<h3 id="avoid-long-code-lines">Avoid Long Code Lines</h3>
+<p>When using an HTML editor, it is inconvenient to scroll right and left to read the HTML code.</p>
+
+<p>Try to avoid code lines longer than 240 characters.</p>
+
+<p><a name="blank-lines-and-indentation"></a></p>
+<h3 id="blank-lines-and-indentation">Blank Lines and Indentation</h3>
+<p>Do not add blank lines without a reason.</p>
+
+<p>For readability, add blank lines to separate large or logical code blocks.</p>
+
+<p>For readability, add four spaces of indentation. Do not use the tab key.</p>
+
+<p>Do not use unnecessary blank lines and indentation. It is not necessary to indent every element:</p>
+
+<p><strong>Unnecessary:</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;body&gt;
+
+  &lt;h1&gt;Famous Cities&lt;/h1&gt;
+
+  &lt;h2&gt;Tokyo&lt;/h2&gt;
+
+  &lt;p&gt;
+    Tokyo is the capital of Japan, the center of the Greater Tokyo Area,
+    and the most populous metropolitan area in the world.
+    It is the seat of the Japanese government and the Imperial Palace,
+    and the home of the Japanese Imperial Family.
+  &lt;/p&gt;
+
+&lt;/body&gt;
+</code></pre></div></div>
+<p><strong>Better:</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;body&gt;
+
+&lt;h1&gt;Famous Cities&lt;/h1&gt;
+
+&lt;h2&gt;Tokyo&lt;/h2&gt;
+&lt;p&gt;Tokyo is the capital of Japan, the center of the Greater Tokyo Area,
+and the most populous metropolitan area in the world.
+It is the seat of the Japanese government and the Imperial Palace,
+and the home of the Japanese Imperial Family.&lt;/p&gt;
+
+&lt;/body&gt;
+</code></pre></div></div>
+
+<p><strong>Table Example:</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Description&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;A&lt;/td&gt;
+    &lt;td&gt;Description of A&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;B&lt;/td&gt;
+    &lt;td&gt;Description of B&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre></div></div>
+<p><strong>List Example:</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;ol&gt;
+  &lt;li&gt;London&lt;/li&gt;
+  &lt;li&gt;Paris&lt;/li&gt;
+  &lt;li&gt;Tokyo&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre></div></div>
+
+<p><a name="omitting-html-body-tags"></a></p>
+<h3 id="do-not-omit-html-and-body">Do Not Omit <code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code> and <code class="highlighter-rouge">&lt;body&gt;</code>?</h3>
+<blockquote>
+  <p>{note} Just because you can doesn’t mean you should!</p>
+</blockquote>
+
+<p><a name="omitting-head"></a></p>
+<h3 id="do-not-omit-head">Do Not Omit <code class="highlighter-rouge">&lt;head&gt;</code>?</h3>
+<blockquote>
+  <p>{note} Just because you can doesn’t mean you should!</p>
+</blockquote>
+
+<p><a name="meta-data"></a></p>
+<h3 id="meta-data">Meta Data</h3>
+<p>The <code class="highlighter-rouge">&lt;title&gt;</code> element is required in HTML5. Make the title as meaningful as possible:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;title&gt;HTML5 Syntax and Coding Style&lt;/title&gt;
+</code></pre></div></div>
+<p>To ensure proper interpretation, and correct search engine indexing, both the language and the character encoding should be defined as early as possible in a document:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en-US"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;title&gt;</span>HTML5 Syntax and Coding Style<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre></div></div>
+
+<p><a name="set-viewport"></a></p>
+<h3 id="setting-the-viewport">Setting The Viewport</h3>
+<p>HTML5 introduced a method to let web designers take control over the viewport, through the <meta /> tag.</p>
+
+<p>The viewport is the user’s visible area of a web page. It varies with the device, and will be smaller on a mobile phone than on a computer screen.</p>
+
+<p>You should include the following <code class="highlighter-rouge">&lt;meta&gt;</code> viewport element in all your web pages:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+</code></pre></div></div>
+<p>A <code class="highlighter-rouge">&lt;meta&gt;</code> viewport element gives the browser instructions on how to control the page’s dimensions and scaling.</p>
+
+<p>The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).</p>
+
+<p>The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser.</p>
+
+<p>Here is an example of a web page without the viewport meta tag, and the same web page with the viewport meta tag:</p>
+
+<p><a name="html-comments"></a></p>
+<h3 id="html-comments">HTML Comments</h3>
+<p>Short comments should be written on one line, like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- This is a comment --&gt;
+</code></pre></div></div>
+<p>Comments that spans more than one line, should be written like this:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- 
+  This is a long comment example. This is a long comment example.
+  This is a long comment example. This is a long comment example.
+--&gt;
+</code></pre></div></div>
+<p>Long comments are easier to observe if they are indented four spaces.</p>
+
+<p><a name="style-sheets"></a></p>
+<h3 id="style-sheets">Style Sheets</h3>
+<p>Use simple syntax for linking to style sheets (the type attribute is not necessary):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;link rel="stylesheet" href="styles.css"&gt;
+</code></pre></div></div>
+<p>Short rules can be written compressed, on one line, like this:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span><span class="nc">.intro</span> <span class="p">{</span><span class="nl">font-family</span><span class="p">:</span> <span class="n">Verdana</span><span class="p">;</span> <span class="nl">font-size</span><span class="p">:</span> <span class="m">16em</span><span class="p">;}</span>
+</code></pre></div></div>
+<p>Long rules should be written over multiple lines:</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">body</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">lightgrey</span><span class="p">;</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="s1">"Arial Black"</span><span class="p">,</span> <span class="n">Helvetica</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">16em</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>Place the opening bracket on the same line as the selector</li>
+  <li>Use one space before the opening bracket</li>
+  <li>Use four spaces of indentation</li>
+  <li>Use semicolon after each property-value pair, including the last</li>
+  <li>Only use quotes around values if the value contains spaces</li>
+  <li>Place the closing bracket on a new line, without leading spaces</li>
+  <li>Avoid lines over 80 characters</li>
+</ul>
+
+<p><a name="load-javascript-in-html"></a></p>
+<h3 id="loading-javascript-in-html">Loading JavaScript in HTML</h3>
+<p>Use simple syntax for loading external scripts (the type attribute is not necessary):</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script src="myscript.js"&gt;
+</code></pre></div></div>
+
+<p>Also use schema-less links when linking when providing absolute paths.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"&gt;&lt;/script&gt;
+</code></pre></div></div>
+
+<p><a name="access-html-elements-in-javascript"></a></p>
+<h3 id="accessing-html-elements-with-javascript">Accessing HTML Elements with JavaScript</h3>
+<p>A consequence of using “untidy” HTML styles, might result in JavaScript errors.</p>
+
+<p>These two JavaScript statements will produce different results:</p>
+
+<p><strong>Example</strong></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nx">getElementById</span><span class="p">(</span><span class="s2">"Demo"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nx">getElementById</span><span class="p">(</span><span class="s2">"demo"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><a name="use-lower-case-file-names"></a></p>
+<h3 id="use-lower-case-file-names">Use Lower Case File Names</h3>
+<p>Some web servers (Apache, Unix) are case sensitive about file names: “london.jpg” cannot be accessed as “London.jpg”.</p>
+
+<p>Other web servers (Microsoft, IIS) are not case sensitive: “london.jpg” can be accessed as “London.jpg” or “london.jpg”.</p>
+
+<p>If you use a mix of upper and lower case, you have to be extremely consistent.</p>
+
+<p>If you move from a case insensitive to a case sensitive server, even small errors will break your web!</p>
+
+<p>To avoid these problems, always use lower case file names.</p>
+
+<p><a name="file-extensions"></a></p>
+<h3 id="file-extensions">File Extensions</h3>
+<p>HTML files should have a <strong>.html</strong> or <strong>.htm</strong> extension.</p>
+
+<p>CSS files should have a <strong>.css</strong> extension.</p>
+
+<p>JavaScript files should have a <strong>.js</strong> extension.</p>
+
+<p><a name="differences-html-htm"></a></p>
+<h4 id="differences-between-htm-and-html">Differences Between .htm and .html</h4>
+<p>There is no difference between the .htm and .html extensions. Both will be treated as HTML by any web browser or web server.</p>
+
+<p>The differences are cultural:</p>
+
+<p>.htm “smells” of early DOS systems where the system limited the extensions to 3 characters.</p>
+
+<p>.html “smells” of Unix operating systems that did not have this limitation.</p>
+
+<p><a name="technical-differences"></a></p>
+<h4 id="technical-differences">Technical Differences</h4>
+<p>When a URL does not specify a filename (like https://www.w3schools.com/css/), the server returns a default filename. Common default filenames are index.html, index.htm, default.html, and default.htm.</p>
+
+<p>If your server is configured only with “index.html” as default filename, your file must be named “index.html”, not “index.htm.”</p>
+
+<p>However, servers can be configured with more than one default filename, and normally you can set up as many default filenames as needed.</p>
+
+<p>Anyway, the full extension for HTML files is .html, and there’s no reason it should not be used.</p>
+
+
+    </section>
+    <footer>
+        
+        <p>This project is maintained by <a href="http://github.com/sysflowdev">sysflowdev</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+    </footer>
+</div>
+<script src="/assets/js/scale.fix.js"></script>
+
+
+
+</body>
+</html>

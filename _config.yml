@@ -1,7 +1,3 @@
-theme: jekyll-theme-cayman
-defaults:
-  -
-    scope:
-      path: "" # an empty string here means all files in the project
-    values:
-      layout: "scaffold"
+theme: jekyll-theme-minimal
+
+repository: sysflowdev/coding-standards
