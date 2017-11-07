@@ -17,7 +17,7 @@ Here is some helpful information around the conventions we employ when building 
 
 Wherever possible, routes in Laravel should be named.
 
-Named routes may use a combination of 'dot' notation, and kebab-case.
+Named routes should use a combination of 'dot' notation, and kebab-case.
 
 For example:
 
@@ -25,7 +25,7 @@ For example:
 route('admin.product-type.index');
 ```
 
-Route names should follow resourceful naming wherever possible: `index`, `create`, `store` etc, and should be singular.
+Route names should follow resourceful naming wherever possible: `index`, `create`, `store` etc, and should not be pluralised.
 
 
 <a name="packages"></a>
