@@ -10,4 +10,5 @@ title: Home
 - [PHP](/php.md)
 - [Database](/database.md)
 - [Filenames](/filenames.md)
-- [Browser Testing](/browser-testing.md)    
+- [Browser Testing](/browser-testing.md)
+- [Laravel](/laravel.md)
