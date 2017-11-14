@@ -45,6 +45,7 @@ Each controller should ideally only contain the following public methods. These 
 - Store
 - Edit 
 - Update
+- Show
 - Destroy
 
 If you are to add other methods, here is an example of when not to add to the existing controller.
