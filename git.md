@@ -24,6 +24,12 @@ Here is a list of files and variables that should ***never*** be committed.
 - vendor folder
 - IDE specific folders (.idea)
 
+### Dotenv
+
+If you are working on a non-Laravel 5 project, it is highly recommended you install the <a href="https://github.com/vlucas/phpdotenv" target="_blank">Dotenv package</a>, which allows you to easliy load .env files into your project to store these details.
+
+You may also wish to grab a copy of the <a href="https://github.com/laravel/framework/blob/master/src/Illuminate/Support/helpers.php#L595" target="_blank">Laravel 5 `env()` helper method</a> in order to easily parse .env file values.
+
 <a name="branchnaming"></a>
 # Branch naming
 feature/{task id}-{kebeab-case-short-description}
