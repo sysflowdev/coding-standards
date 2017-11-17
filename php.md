@@ -12,6 +12,7 @@ title: PHP
 - [Arrays](#arrays)
 - [Docblocks](#docblocks)
 - [PHPMD](#phpmd)
+- [PHPCS](#phpcs)
 - [Resources](#resources)
 
 <a name="introduction"></a>
@@ -122,7 +123,18 @@ Also usage of PHP return types where appropriate (e.g. when they serve a benefit
 ## PHPMD - PHP Mess Detection
 Also as much as possible try to following the best practices set out in [PHPMD](https://phpmd.org/).
 
-> {tip} Set up PHPStorm to alert you to problems in your code. 
+We have a custom ruleset which can be downloaded <a href="/_resources/phpmd.xml" target="_blank">here</a>.
+
+> Set up PHPStorm to alert you to problems in your code.
+> File > Settings > Editor > Inspections > PHP > PHP Mess Detector validation
+
+<a name="phpcs"></a>
+## PHPCS - PHP Code Sniffer
+
+We have a custom PHPCS ruleset which can be downloaded <a href="/_resources/phpcs.xml" target="_blank">here</a>.
+
+> Set up PHPStorm to alert you to problems in your code.
+> File > Settings > Editor > Inspections > PHP > PHP Code Sniffer validation
 
 <a name="resources"></a>
 ## Resources
