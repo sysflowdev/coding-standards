@@ -10,7 +10,10 @@ title: Database
 ## Tables and Fields
 All table and fields to use snake_case.
 
-Currency should be stored in an integer e.g. pence.
+Values should be stored in the lowest common denomination of that value that will be a integer and not a float or decimal, to allow for greatest accuracy.
+- Currency should be stored as an integer of pence.
+- Time should be stored as an integer of seconds instead of a decimal for minutes.
+- Measurements in meters or centimeters should be stored as millimeters.
 
 Columns should be structured in the following method
 

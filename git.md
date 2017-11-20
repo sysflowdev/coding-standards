@@ -32,7 +32,7 @@ You may also wish to grab a copy of the <a href="https://github.com/laravel/fram
 
 <a name="branchnaming"></a>
 # Branch naming
-feature/{task id}-{kebeab-case-short-description}
+feature/{task id}-{kebab-case-short-description}
 
 <a name="deployments"></a>
 # Deployments

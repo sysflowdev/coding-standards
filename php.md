@@ -60,7 +60,7 @@ These should ideally be in their own controller as:
 <a name="namespacing"></a>
 ## Namespacing
 
-Modularizing your code into pseudo packages. 
+Modularizing your code into pseudo packages (&quot;package by feature instead of layer&quot;).
 
 **Examples (Holiday)**
 - Sysflow/Holiday/Commands
@@ -105,7 +105,7 @@ $array = [
 ```
 
 ## Docblocks
-Docblocks should state the return type and paremeters, as this can help the IDE flag up when you are trying to use the wrong return type or parameter.
+Docblocks should state the return type and parameters, as this can help the IDE flag up when you are trying to use the wrong return type or parameter.
 
 Also usage of PHP return types where appropriate (e.g. when they serve a benefit, if you require an integer then force it to be one).
 

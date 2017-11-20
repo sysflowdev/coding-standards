@@ -197,7 +197,7 @@ Do not add blank lines without a reason.
 
 For readability, add blank lines to separate large or logical code blocks.
 
-For readability, add four spaces of indentation. Do not use the tab key.
+For readability, add four spaces (soft tabs) of indentation. Do not use the tab character (hard tabs).
 
 Do not use unnecessary blank lines and indentation. It is not necessary to indent every element:
 
@@ -384,7 +384,7 @@ Other web servers (Microsoft, IIS) are not case sensitive: "london.jpg" can be a
 
 If you use a mix of upper and lower case, you have to be extremely consistent.
 
-If you move from a case insensitive to a case sensitive server, even small errors will break your web!
+If you move from a case insensitive to a case sensitive server, even small errors will break your website!
 
 To avoid these problems, always use lower case file names.
 
