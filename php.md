@@ -123,7 +123,7 @@ Also usage of PHP return types where appropriate (e.g. when they serve a benefit
 ## PHPMD - PHP Mess Detection
 Also as much as possible try to following the best practices set out in [PHPMD](https://phpmd.org/).
 
-We have a custom ruleset which can be downloaded <a href="https://raw.githubusercontent.com/sysflowdev/coding-standards/master/_resources/phpmd.xml" target="_blank">here</a>.
+We have a custom ruleset which can be downloaded <a href="https://raw.githubusercontent.com/sysflowdev/coding-standards/master/assets/files/phpmd.xml" target="_blank">here</a>.
 
 > Set up PHPStorm to alert you to problems in your code.
 > File > Settings > Editor > Inspections > PHP > PHP Mess Detector validation
@@ -131,7 +131,7 @@ We have a custom ruleset which can be downloaded <a href="https://raw.githubuser
 <a name="phpcs"></a>
 ## PHPCS - PHP Code Sniffer
 
-We have a custom PHPCS ruleset which can be downloaded <a href="https://raw.githubusercontent.com/sysflowdev/coding-standards/master/_resources/phpcs.xml" target="_blank">here</a>.
+We have a custom PHPCS ruleset which can be downloaded <a href="https://raw.githubusercontent.com/sysflowdev/coding-standards/master/assets/files/phpcs.xml" target="_blank">here</a>.
 
 > Set up PHPStorm to alert you to problems in your code.
 > File > Settings > Editor > Inspections > PHP > PHP Code Sniffer validation
