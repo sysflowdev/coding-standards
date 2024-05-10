@@ -41,7 +41,7 @@ In the future, programs like XML readers, may want to read your HTML.
 
 Using a well-formed "close to XHTML" syntax, is smart as it makes sites backwards compatible and future proof.
 
-> {tip} Always keep your code tidy, clean, and well-formed.
+> 💡 Always keep your code tidy, clean, and well-formed.
 
 <a name="standards"></a>
 ## Standards
@@ -376,7 +376,7 @@ var obj = getElementById("Demo")
 var obj = getElementById("demo")
 ```
 
-<a name="use-lower-case-file-names"></a>
+
 ### Use Lower Case File Names
 Some web servers (Apache, Unix) are case sensitive about file names: "london.jpg" cannot be accessed as "London.jpg".
 
@@ -415,3 +415,6 @@ If your server is configured only with "index.html" as default filename, your fi
 However, servers can be configured with more than one default filename, and normally you can set up as many default filenames as needed.
 
 Anyway, the full extension for HTML files is .html, and there's no reason it should not be used.
+
+## Sources
+https://www.w3schools.com/html/html5_syntax.asp
