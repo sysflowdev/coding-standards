@@ -13,8 +13,7 @@ title: PHP
 - [Arrays](#arrays)
 - [Docblocks](#docblocks)
 - [StyleCI](#styleci)
-- [PHPMD](#phpmd)
-- [PHPCS](#phpcs)
+- [PHPMD & PHPCS](#phpmd)
 - [Laravel](#laravel)
 - [Resources](#resources)
 
@@ -161,20 +160,32 @@ Minimally align double arrow symbols in consecutive lines. This is again for rea
 
 
 <a name="phpmd"></a>
-## PHPMD - PHP Mess Detection
-Also as much as possible try to following the best practices set out in [PHPMD](https://phpmd.org/).
+## PHPMD & PHPCS
+**PHPMD** stands for PHP Mess Detector. It's a tool used in software development for PHP (Hypertext Preprocessor) projects. PHPMD analyzes PHP code and detects potential issues or "code smells" based on predefined rules. These rules cover a range of concerns including code complexity, potential bugs, coding standards violations, and other factors that might affect code quality and maintainability.
 
-We have a custom ruleset which can be downloaded <a href="https://raw.githubusercontent.com/sysflowdev/coding-standards/master/assets/files/phpmd.xml" target="_blank">here</a>.
+Using PHPMD can help developers identify areas of improvement in their codebase, leading to cleaner, more maintainable code. It's often integrated into development workflows as part of continuous integration (CI) processes or used manually during code reviews to ensure code quality standards are met.
+
+**PHPCS** stands for PHP CodeSniffer. Similar to PHPMD, it's a popular tool used in PHP development to enforce coding standards and detect violations. However, while PHPMD primarily focuses on identifying potential issues or "code smells", PHPCS specifically targets adherence to coding standards.
+
+PHPCS analyzes PHP code against a set of predefined coding standards, such as PSR-1, PSR-2, PSR-12, Zend, or custom rulesets. It checks for formatting inconsistencies, naming conventions, indentation, spacing, and other aspects of coding style. When violations are found, PHPCS reports them, often providing suggestions or auto-fix options to bring the code into compliance with the specified standards.
+
+Integrating PHPCS into development workflows helps ensure that codebases maintain a consistent style and adhere to established coding conventions, facilitating collaboration and improving overall code quality.
+
+It is recommended to have PHPCS and PHPMD installed under the require-dev section of your composer.json so you can benefit from this analysis in PHPStorm.
+
+```
+    "require-dev": {
+        ...
+        "phpmd/phpmd": "2.*",
+        "squizlabs/php_codesniffer": "*",
+        ...
+    },
+```
 
 > Set up PHPStorm to alert you to problems in your code.
+
 > File > Settings > Editor > Inspections > PHP > PHP Mess Detector validation
 
-<a name="phpcs"></a>
-## PHPCS - PHP Code Sniffer
-
-We have a custom PHPCS ruleset which can be downloaded <a href="https://raw.githubusercontent.com/sysflowdev/coding-standards/master/assets/files/phpcs.xml" target="_blank">here</a>.
-
-> Set up PHPStorm to alert you to problems in your code.
 > File > Settings > Editor > Inspections > PHP > PHP Code Sniffer validation
 
 <a name="laravel"></a>
