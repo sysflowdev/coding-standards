@@ -4,6 +4,7 @@ title: PHP
 # PHP
 
 - [Introduction](#introduction)
+- [Filenames](#filenames)
 - [Classes](#classes)
 - [Controllers](#controllers)
 - [Namespacing](#namespacing)
@@ -11,14 +12,22 @@ title: PHP
 - [Variables](#variables)
 - [Arrays](#arrays)
 - [Docblocks](#docblocks)
+- [StyleCI](#styleci)
 - [PHPMD](#phpmd)
 - [PHPCS](#phpcs)
+- [Laravel](#laravel)
 - [Resources](#resources)
 
 <a name="introduction"></a>
 ## Introduction
 Here is some helpful information in addition to the PSR2 standards on how we should be using PHP.
 
+<a name="filenames"></a>
+## Filenames
+
+Except classes, filenames should be kebab-case (All lowercase with - separating words) e.g. this-is-my-view.blade.php
+
+Classes are different, these should be PascalCase e.g. ThisIsMyClass.php, ThisIsMyClass.js
 
 <a name="classes"></a>
 ## Classes
@@ -119,6 +128,38 @@ Also usage of PHP return types where appropriate (e.g. when they serve a benefit
  */
 ```
 
+<a name="styleci"></a>
+## Style CI
+We typically use the [Laravel Preset](https://docs.styleci.io/presets#laravel) in StyleCI for our PHPCSFixer baseline.
+
+However, below are the settings that we recommend changing for readability.
+
+```
+enabled:
+    - align_equals
+    - concat_with_spaces
+    - align_double_arrow_minimal
+disabled:
+    - unalign_equals
+    - concat_without_spaces
+```
+
+### align_equals (enabled)
+Align equals symbols in consecutive lines. This is for readability.
+
+> :bulb This fixer cannot be enabled at the same time as the align_equals_minimal or unalign_equals fixers.
+
+### concat_with_spaces (enabled)
+Concatenation should be used with at least one whitespace around. This is for readability.
+
+> :bulb This fixer cannot be enabled at the same time as the concat_without_spaces fixer.
+
+### align_double_arrows_minimal (enabled)
+Minimally align double arrow symbols in consecutive lines. This is again for readability.
+
+> :bulb This fixer cannot be enabled at the same time as the align_double_arrow or unalign_double_arrow fixers.
+
+
 <a name="phpmd"></a>
 ## PHPMD - PHP Mess Detection
 Also as much as possible try to following the best practices set out in [PHPMD](https://phpmd.org/).
@@ -136,14 +177,23 @@ We have a custom PHPCS ruleset which can be downloaded <a href="https://raw.gith
 > Set up PHPStorm to alert you to problems in your code.
 > File > Settings > Editor > Inspections > PHP > PHP Code Sniffer validation
 
+<a name="laravel"></a>
+## Routes
+Wherever possible, routes in Laravel should be named.
+
+Named routes should use a combination of 'dot' notation, and kebab-case.
+
+```
+route('admin.product-type.index');
+```
+
+Route names should follow resourceful naming wherever possible: index, create, store etc, and should not be pluralised.
+
 <a name="resources"></a>
 ## Resources
 - [PHP : The Right Way](http://www.phptherightway.com/)
 - [PHP.net](http://www.php.net/)
 - [Laracasts](https://laracasts.com/)
-- [Laravel Docs 4.2](https://laravel.com/docs/4.2)
-- [Laravel API 4.2](https://laravel.com/api/4.2)
-- [Laravel Docs 5.5](https://laravel.com/docs/5.5)
-- [Laravel API 5.5](https://laravel.com/api/5.5)
+- [Laravel Docs](https://laravel.com/docs)
 - [OOP Principles](https://anampiu.github.io/blog/OOP-principles/)
 - [Object Calisthenics](http://williamdurand.fr/2013/06/03/object-calisthenics/)  
