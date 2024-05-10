@@ -18,7 +18,7 @@ An ID should only be used once per page. So using them for styling is not suitab
 
 <a name="sass"></a>
 ## SASS 
-SASS style guide is covered [here](/coding-standards/sass).
+SASS style guide is covered [here](https://github.com/bigcommerce/sass-style-guide).
 
 <a name="less"></a>
 ## LESS
@@ -150,3 +150,4 @@ border: 0;
 
 ## Sources
 https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Writing_style_guide/Code_style_guide/CSS
+https://github.com/bigcommerce/sass-style-guide
