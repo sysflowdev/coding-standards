@@ -147,3 +147,6 @@ When turning off borders (and any other properties that can take 0 or none as va
 ```
 border: 0;
 ```
+
+## Sources
+https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Writing_style_guide/Code_style_guide/CSS
