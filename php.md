@@ -4,6 +4,7 @@ title: PHP
 # PHP
 
 - [Introduction](#introduction)
+- [Filenames](#filenames)
 - [Classes](#classes)
 - [Controllers](#controllers)
 - [Namespacing](#namespacing)
@@ -11,14 +12,21 @@ title: PHP
 - [Variables](#variables)
 - [Arrays](#arrays)
 - [Docblocks](#docblocks)
-- [PHPMD](#phpmd)
-- [PHPCS](#phpcs)
+- [StyleCI](#styleci)
+- [PHPMD & PHPCS](#phpmd)
+- [Laravel](#laravel)
 - [Resources](#resources)
 
 <a name="introduction"></a>
 ## Introduction
 Here is some helpful information in addition to the PSR2 standards on how we should be using PHP.
 
+<a name="filenames"></a>
+## Filenames
+
+Except classes, filenames should be kebab-case (All lowercase with - separating words) e.g. this-is-my-view.blade.php
+
+Classes are different, these should be PascalCase e.g. ThisIsMyClass.php, ThisIsMyClass.js
 
 <a name="classes"></a>
 ## Classes
@@ -119,31 +127,84 @@ Also usage of PHP return types where appropriate (e.g. when they serve a benefit
  */
 ```
 
-<a name="phpmd"></a>
-## PHPMD - PHP Mess Detection
-Also as much as possible try to following the best practices set out in [PHPMD](https://phpmd.org/).
+<a name="styleci"></a>
+## Style CI
+We typically use the [Laravel Preset](https://docs.styleci.io/presets#laravel) in StyleCI for our PHPCSFixer baseline.
 
-We have a custom ruleset which can be downloaded <a href="https://raw.githubusercontent.com/sysflowdev/coding-standards/master/assets/files/phpmd.xml" target="_blank">here</a>.
+However, below are the settings that we recommend changing for readability.
+
+```
+enabled:
+    - align_equals
+    - concat_with_spaces
+    - align_double_arrow_minimal
+disabled:
+    - unalign_equals
+    - concat_without_spaces
+```
+
+### align_equals (enabled)
+Align equals symbols in consecutive lines. This is for readability.
+
+> :bulb This fixer cannot be enabled at the same time as the align_equals_minimal or unalign_equals fixers.
+
+### concat_with_spaces (enabled)
+Concatenation should be used with at least one whitespace around. This is for readability.
+
+> :bulb This fixer cannot be enabled at the same time as the concat_without_spaces fixer.
+
+### align_double_arrows_minimal (enabled)
+Minimally align double arrow symbols in consecutive lines. This is again for readability.
+
+> :bulb This fixer cannot be enabled at the same time as the align_double_arrow or unalign_double_arrow fixers.
+
+
+<a name="phpmd"></a>
+## PHPMD & PHPCS
+**PHPMD** stands for PHP Mess Detector. It's a tool used in software development for PHP (Hypertext Preprocessor) projects. PHPMD analyzes PHP code and detects potential issues or "code smells" based on predefined rules. These rules cover a range of concerns including code complexity, potential bugs, coding standards violations, and other factors that might affect code quality and maintainability.
+
+Using PHPMD can help developers identify areas of improvement in their codebase, leading to cleaner, more maintainable code. It's often integrated into development workflows as part of continuous integration (CI) processes or used manually during code reviews to ensure code quality standards are met.
+
+**PHPCS** stands for PHP CodeSniffer. Similar to PHPMD, it's a popular tool used in PHP development to enforce coding standards and detect violations. However, while PHPMD primarily focuses on identifying potential issues or "code smells", PHPCS specifically targets adherence to coding standards.
+
+PHPCS analyzes PHP code against a set of predefined coding standards, such as PSR-1, PSR-2, PSR-12, Zend, or custom rulesets. It checks for formatting inconsistencies, naming conventions, indentation, spacing, and other aspects of coding style. When violations are found, PHPCS reports them, often providing suggestions or auto-fix options to bring the code into compliance with the specified standards.
+
+Integrating PHPCS into development workflows helps ensure that codebases maintain a consistent style and adhere to established coding conventions, facilitating collaboration and improving overall code quality.
+
+It is recommended to have PHPCS and PHPMD installed under the require-dev section of your composer.json so you can benefit from this analysis in PHPStorm.
+
+```
+    "require-dev": {
+        ...
+        "phpmd/phpmd": "2.*",
+        "squizlabs/php_codesniffer": "*",
+        ...
+    },
+```
 
 > Set up PHPStorm to alert you to problems in your code.
+
 > File > Settings > Editor > Inspections > PHP > PHP Mess Detector validation
 
-<a name="phpcs"></a>
-## PHPCS - PHP Code Sniffer
-
-We have a custom PHPCS ruleset which can be downloaded <a href="https://raw.githubusercontent.com/sysflowdev/coding-standards/master/assets/files/phpcs.xml" target="_blank">here</a>.
-
-> Set up PHPStorm to alert you to problems in your code.
 > File > Settings > Editor > Inspections > PHP > PHP Code Sniffer validation
+
+<a name="laravel"></a>
+## Routes
+Wherever possible, routes in Laravel should be named.
+
+Named routes should use a combination of 'dot' notation, and kebab-case.
+
+```
+route('admin.product-type.index');
+```
+
+Route names should follow resourceful naming wherever possible: index, create, store etc, and should not be pluralised.
 
 <a name="resources"></a>
 ## Resources
 - [PHP : The Right Way](http://www.phptherightway.com/)
 - [PHP.net](http://www.php.net/)
 - [Laracasts](https://laracasts.com/)
-- [Laravel Docs 4.2](https://laravel.com/docs/4.2)
-- [Laravel API 4.2](https://laravel.com/api/4.2)
-- [Laravel Docs 5.5](https://laravel.com/docs/5.5)
-- [Laravel API 5.5](https://laravel.com/api/5.5)
+- [Laravel Docs](https://laravel.com/docs)
 - [OOP Principles](https://anampiu.github.io/blog/OOP-principles/)
 - [Object Calisthenics](http://williamdurand.fr/2013/06/03/object-calisthenics/)  
