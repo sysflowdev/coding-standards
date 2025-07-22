@@ -19,7 +19,9 @@ title: PHP
 
 <a name="introduction"></a>
 ## Introduction
-Here is some helpful information in addition to the PSR2 standards on how we should be using PHP.
+Here is some helpful information on the coding standards we use for PHP.
+We follow Laravel 12 standards, which use PSR-12 coding standard (extended coding style guide) and PSR-4 autoloading standard.
+This was previously PSR-2 but PSR-2 is now deprecated, but PSR-12 is based on it.
 
 <a name="filenames"></a>
 ## Filenames
@@ -67,22 +69,67 @@ These should ideally be in their own controller as:
 
 <a name="namespacing"></a>
 ## Namespacing
+We are moving away from modularising your code into pseudo packages in favour of the laravel way.
 
-Modularizing your code into pseudo packages (&quot;package by feature instead of layer&quot;).
+### Core Principles
+Laravel follows PSR-4 autoloading standard with these fundamental principles:
 
-**Examples (Holiday)**
-- Sysflow/Holiday/Commands
-- Sysflow/Holiday/Http/Admin/Controllers
-- Sysflow/Holiday/Http/Frontend/Controllers
-- Sysflow/Holiday/Models
-- resources/views/holiday
+1. *Root namespace:* App is the default root namespace, autoloaded by Composer using PSR-4
+2. *Directory mapping:* Each namespace segment maps directly to a directory
+3. *PascalCase:* All namespace segments use PascalCase formatting
+4. *Singular naming:* Most classes use singular forms (User, not Users)
+5. *Descriptive suffixes:* Classes have descriptive endings indicating their role (Controller, Seeder, etc.)
 
-**Examples (Task)**
-- Sysflow/Task/Commands
-- Sysflow/Task/Http/Admin/Controllers
-- Sysflow/Task/Http/Frontend/Controllers
-- Sysflow/Task/Models
-- resources/views/task
+### Standard Laravel Structure
+#### Default Laravel Organization
+```
+app/
+├── Http/
+│   ├── Controllers/           # App\Http\Controllers
+│   ├── Middleware/           # App\Http\Middleware  
+│   ├── Requests/             # App\Http\Requests
+│   └── Resources/            # App\Http\Resources
+├── Models/                   # App\Models
+├── Providers/                # App\Providers
+├── Jobs/                     # App\Jobs
+├── Events/                   # App\Events
+├── Listeners/                # App\Listeners
+├── Mail/                     # App\Mail
+├── Notifications/            # App\Notifications
+└── Rules/                    # App\Rules
+```
+### Namespace Examples
+```php
+// Controllers
+namespace App\Http\Controllers;
+class UserController extends Controller {}
+
+// Models  
+namespace App\Models;
+class User extends Model {}
+
+// Form Requests
+namespace App\Http\Requests;
+class StoreUserRequest extends FormRequest {}
+
+// Resources
+namespace App\Http\Resources;
+class UserResource extends JsonResource {}
+
+// Jobs
+namespace App\Jobs;
+class ProcessPayment implements ShouldQueue {}
+
+// Events
+namespace App\Events;
+class UserRegistered {}
+
+// Listeners
+namespace App\Listeners;
+class SendWelcomeEmail {}
+```
+
+If this is a large project, there is potential for  Feature modules within App, or Domain driven design structure but this needs to be signed off by senior management (Technical director and web manager) first.
 
 <a name="functions"></a>
 ## Functions
@@ -104,27 +151,51 @@ $vatTotal = $invoice->vat_total;
 <a name="arrays"></a>
 ## Arrays
 - Array keys should be snake case.
-- Arrays should be written in the new format using square brackets [].
+- Trailing commas in multi-line arrays
+- Array destructuring syntax
+- Short array syntax consistency
 
 ```php
+// Multi-line arrays should have trailing commas
 $array = [
-    'some_array_key' => 'some_value'
+    'first_key' => 'value',
+    'second_key' => 'another_value',
+    'third_key' => 'final_value', // ← trailing comma
 ];
+
+// Array destructuring
+[$first, $second] = $someArray;
 ```
 
 ## Docblocks
 Docblocks should state the return type and parameters, as this can help the IDE flag up when you are trying to use the wrong return type or parameter.
 
 Also usage of PHP return types where appropriate (e.g. when they serve a benefit, if you require an integer then force it to be one).
+When return types are used you won't need them in the docblocks
 
+With type prarams and return types
 ```php
-/**
- * Description (optional?)
- *  
- * @param $name
+**
+ * Brief description of what the method does.
+ */
+public function methodName(string $name): string
+{
+    // implementation
+}
+```
+
+Without type params and return types
+```php
+**
+ * Brief description of what the method does.
  *
+ * @param  string  $name  The name parameter
  * @return string
  */
+public function methodName($name)
+{
+    // implementation
+}
 ```
 
 <a name="styleci"></a>
@@ -135,11 +206,9 @@ However, below are the settings that we recommend changing for readability.
 
 ```
 enabled:
-    - align_equals
-    - concat_with_spaces
-    - align_double_arrow_minimal
+    - align_double_arrow
 disabled:
-    - unalign_equals
+    - align_equals
     - concat_without_spaces
 ```
 
@@ -176,8 +245,9 @@ It is recommended to have PHPCS and PHPMD installed under the require-dev sectio
 ```
     "require-dev": {
         ...
-        "phpmd/phpmd": "2.*",
-        "squizlabs/php_codesniffer": "*",
+        "phpmd/phpmd": "2.15",
+        "squizlabs/php_codesniffer": "3.7",
+        "laravel/pint": "^1.0"
         ...
     },
 ```
